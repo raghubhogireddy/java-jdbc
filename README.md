@@ -25,5 +25,17 @@ RDBMS vs. NoSQL: While relational databases are excellent for data with inherent
 - **Transaction**: A group of SQL commands that are executed together. If one command fails, all commands in the transaction are rolled back to ensure data consistency.
 - **Rollback**: If something goes wrong in a transaction, rollback undoes all the commands in that transaction, as if they never happened.
 
-
+### CRUD
+- CRUD stands for the four main functions you perform on data in a database:
+    - **Create**: Adding new data to the database. This is done using an INSERT statement.
+    - **Read**: Retrieving data from the database. This is done using a SELECT statement.
+    - **Update**: Modifying existing data in the database. This is done using an UPDATE statement.
+    - **Delete**: Removing data from the database. This is done using a DELETE statement.
+- **Data Manipulation Language (DML)**: CRUD operations are part of DML, which includes commands to insert, update, select, and delete data.
+- **Idempotent Operations**
+    - **Create (INSERT): Usually not idempotent because inserting the same data multiple times can lead to duplicates.
+    - **Read (SELECT)**: Idempotent because reading data doesn't change it.
+    - **Update (UPDATE)**: Idempotent if updating with the same values repeatedly results in the same outcome.
+    - **Delete (DELETE)**: Idempotent after the first execution because once data is deleted, it can't be deleted again.
+- **Constraints**: Rules that ensure data integrity, like not allowing a foreign key to be inserted before its primary key exists.
 
