@@ -39,3 +39,9 @@ RDBMS vs. NoSQL: While relational databases are excellent for data with inherent
     - **Delete (DELETE)**: Idempotent after the first execution because once data is deleted, it can't be deleted again.
 - **Constraints**: Rules that ensure data integrity, like not allowing a foreign key to be inserted before its primary key exists.
 
+### DAO pattern
+
+- **Purpose of DAO Pattern**: Provides an abstraction between JDBC and the rest of your code, ensuring a clear separation of concerns.
+- **Use of DTOs**: Data Transfer Objects (DTOs) are used to store state between layers, often combined with DAOs to encapsulate data access logic.
+- **Separation and Encapsulation**: DAOs help manage complex joins and aggregations, keeping data access code separate from business logic.
+- **Common Practices**: Leveraging a common interface for DAOs and using DAO factories for basic CRUD operations can be beneficial, though customization may be necessary for specific data access methods.
