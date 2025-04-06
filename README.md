@@ -45,3 +45,11 @@ RDBMS vs. NoSQL: While relational databases are excellent for data with inherent
 - **Use of DTOs**: Data Transfer Objects (DTOs) are used to store state between layers, often combined with DAOs to encapsulate data access logic.
 - **Separation and Encapsulation**: DAOs help manage complex joins and aggregations, keeping data access code separate from business logic.
 - **Common Practices**: Leveraging a common interface for DAOs and using DAO factories for basic CRUD operations can be beneficial, though customization may be necessary for specific data access methods.
+
+### Repository Pattern
+
+- **Single Table Access**: The repository pattern involves accessing a single table per class, unlike the DAO pattern which can span multiple tables.
+- **Code-Based Joins**: Instead of performing joins in the database, the repository pattern handles joins in the code, which is beneficial for distributed systems and NoSQL environments.
+- **Scalability Considerations**: The repository pattern is suitable for horizontally scalable applications, while the DAO pattern may be better for vertically scalable applications with highly normalized databases.
+- This approach is particularly useful in microservices architectures where databases are often distributed.
+

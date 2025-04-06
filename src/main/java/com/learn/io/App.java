@@ -24,7 +24,15 @@ public class App {
         Service newService = new Service();
         newService.setName("MyService_" + System.currentTimeMillis());
         newService.setPrice(new BigDecimal("99.95"));
-        Service addedService = serviceDao.create(newService);
-        System.out.println("\n ** CREATE **\n " + addedService);
+        newService = serviceDao.create(newService);
+        System.out.println("\n ** CREATE **\n " + newService);
+
+        newService.setPrice(new BigDecimal("100.00"));
+        newService = serviceDao.update(newService);
+        System.out.println("\n ** UPDATE **\n " + newService);
+
+        serviceDao.delete(newService.getServiceId());
+        Optional<Service> optional = serviceDao.getOne(newService.getServiceId());
+        System.out.println("\n ** GET_ONE after DELETE isEmpty ? ** " + optional.isEmpty());
     }
 }
